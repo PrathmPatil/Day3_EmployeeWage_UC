@@ -2,23 +2,17 @@ package com.employee;
 
 import java.util.Random;
 
-public class UC4_EmployeWageSwitchCase {
+public class UC5_CalculateWagesForMonth {
 	static int hr=0;
 	static int pt=0;
 	
 	static void presenti(int a,int b)
 	{	
-		switch (a)
-		{
-		case 1: hr+=8;
-		break;
-		}
+		if(a==1)
+			hr+=8;
 		
-		switch(b)
-		{
-		case 1 :pt+=8;
-		break;
-		}
+		if(b==1)
+			pt+=8;
 	}
 
 	public static void main(String[] args) {
@@ -33,7 +27,7 @@ Random value=new Random();
 int upperbond=2;
 int value_random;
 int value_randompart;
-   for(int i=0;i<31;i++){
+   for(int i=0;i<20;i++){
 	    value_random= value.nextInt(upperbond);
 	   //presenti(value_random);
 	   value_randompart= value.nextInt(upperbond);
@@ -41,9 +35,10 @@ int value_randompart;
 
    }
    System.out.println("Total present day "+hr/8);
-   System.out.println("Total absent day "+(31-(hr/8)));
+   System.out.println("Total absent day "+(20-(hr/8)));
    System.out.println("Total part time hours "+pt);
    System.out.println("Total Wage of the month is "+ (pt+hr)*20);
+
 
 	}
 
